@@ -1,7 +1,9 @@
 ---
 fixtures:
   repositories:
-    "stdlib": "https://github.com/puppetlabs/puppetlabs-stdlib"
-    "concat": "https://github.com/puppetlabs/puppetlabs-concat"
+    stdlib:
+      repo: 'https://github.com/puppetlabs/puppetlabs-stdlib'
+    concat:
+      repo: 'https://github.com/puppetlabs/puppetlabs-concat'
   symlinks:
-    "eosserver": "#{source_dir}"
+    'eosserver': "#{source_dir}"
