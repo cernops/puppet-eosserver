@@ -1,0 +1,15 @@
+###
+# PUPPET GENERATED
+# EOS environment
+###
+
+<% scope['eosserver::environment::environment'].sort.each do |key, val| -%>
+<% next if val == :undef or val.nil? -%>
+<%= key.to_s %>="<%= val.to_s %>"
+<% end -%>
+
+<% if @custom_fragment -%>
+
+<%= @custom_fragment.to_s %>
+<% end -%>
+
