@@ -21,15 +21,15 @@ This one-liner will setup repositories and system-wide environment files but NOT
 
 ```puppet
 ::eosserver::instance { 'fst':
-    config_file => '/etc/xrd.cf.fst',
-    config      => lookup({
-      'name'  => 'eosserver_fst_config',
-      'merge' => {
-        'strategy'        => 'deep',
-        'knockout_prefix' => '--',
-      },
-    }),
-  }
+  config_file => '/etc/xrd.cf.fst',
+  config      => lookup({
+    'name'  => 'eosserver_fst_config',
+    'merge' => {
+      'strategy'        => 'deep',
+      'knockout_prefix' => '--',
+    },
+  }),
+}
 ```
 
 This snippet create an EOS daemon instance (not to be confused with a whole EOS instance) called FST.
