@@ -55,9 +55,9 @@ notifications:
   webhooks: https://mattermost.web.cern.ch/hooks/x6qywtd5wbgyfkx5htn55mtbra
 deploy:
   provider: puppetforge
-  user: puppet
+  user: CERNOps
   password:
-    secure: ""
+    secure: "FL/yqBvpimbUSdoaFJ+zmxD5pKXhz5vZCSAe+mgl0RFghAJR9MrIXP+xzCNqkqxZdbz61lQJTpztTGhSavhP+NHYDYZTk5KAo3EO14WdW8baw1iRiUXnxtB9OGaAwQ/b67UptaQH78b2nNS0a+seOto6cKsIVMnTRQ5ciUVyJW4EmU27IMFWeDYMvVKt8f6vruVR/Q1I8tqFvR9ILCJf4PVdZFRHeOY6g2iCilVmxHWfSB7TzTr4+/1NlGx6O42LJQF2Oa7097re+V3tgOOJvp2IImOU5gXPiu/Sfwk1USjG5+KTLm75OA+bWu+Z2IB70DnhVkdbfOQNiPm6ZFlLl7Mrjr1miAm128WLMND+hmRFcPJmFv6MyT8oTyXrsiuIE5KAvgAbcSSpkPrM3oOatI+6YpNky5zfgULyvs8u22y7VRIc+X+N7DKTKRTDAUIX/GiMwCuz5PDlYtV1sS4auX3Ug/A2fTpjmMMy8/0uqHH8+59TMC6N1WE/UkOKLtnIVCPNEhL2h1VLfRFadBWw1sUwvvkYW7CHMvSzWw5sf/tgmYaLgQNuq6SG99XTJO4Ur18g8USsYjeJJlooK+I4fUt5/O3Hm5NvdpWsXkgHQD9+/XKBMAiRNBgJrKBhFq6cAT11I7v+L2divYG2DwXKCFBXx2FII7J1WnYtABvBhYo="
   on:
     tags: true
     # all_branches is required to use tags
