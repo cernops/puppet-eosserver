@@ -1,14 +1,3 @@
-# Copy this file into code/spec/classes/init_spec.rb
-#
-# This example includes a basic test to check that
-# eosserver::init compiles.
-#
-# See:
-# * http://rspec-puppet.com/tutorial/
-# * http://rspec-puppet.com/matchers/
-# * https://github.com/mcanevet/rspec-puppet-facts
-# for learning RSpec Puppet.
-
 require 'spec_helper'
 
 describe 'eosserver::params' do

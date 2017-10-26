@@ -15,7 +15,8 @@ class eosserver::params {
   $repo_enable_dev   = false
   $repo_gpgcheck     = false
   $repo_priority     = 5
-  $pkg_debuginfo     = false
+  $quarkdb_ensure    = 'absent'
+  $debuginfo_ensure  = 'absent'
   $config            = {
     '# EMPTY' => 'CONFIGURATION',
   }

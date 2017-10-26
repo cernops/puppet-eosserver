@@ -46,6 +46,19 @@ describe 'eosserver' do
       describe 'eosserver::environment' do
         it { is_expected.to contain_file('/etc/sysconfig/eos_env') }
       end
+
+      context 'with quarkdb and debuginfos' do
+        let(:params) do
+          {
+            ensure: 'present',
+            quarkdb_ensure: 'present',
+            debuginfo_ensure: 'present'
+          }
+        end
+
+        it { is_expected.to contain_package('quarkdb').with_ensure_present }
+        it { is_expected.to contain_package('quarkdb-debuginfo').with_ensure_present }
+      end
     end
   end
 end
