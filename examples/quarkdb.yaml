@@ -1,0 +1,7 @@
+---
+eosserver_quarkdb_config:
+  xrd.port: 7777
+  xrd.protocol: redis:7777 libXrdQuarkDB.so
+  redis.mode: raft
+  redis.database: /var/lib/quarkdb/eosns
+  redis.myself: "%{::fqdn}:7777"
