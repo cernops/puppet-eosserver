@@ -3,6 +3,7 @@ define eosserver::instance (
   Enum['stopped', 'running'] $service_ensure = 'running',
   Boolean $service_manage = true,
   Hash $config = undef,
+  Optional[String] $instance_name = "eos@${title}",
   Optional[String] $config_file = "/etc/xrd.cf.${title}",
   Optional[String] $custom_fragment = undef,
 ) {
@@ -13,7 +14,6 @@ define eosserver::instance (
   $_config = pick($config, $eosserver::params::config)
   validate_hash($_config)
 
-  $instance_name = "eos@${title}"
   validate_absolute_path(dirname($config_file))
 
   eosserver::config { $instance_name:
