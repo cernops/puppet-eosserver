@@ -1,46 +1,45 @@
----
 sudo: false
 dist: trusty
 language: ruby
 cache: bundler
 before_install:
-  - bundle -v
-  - rm Gemfile.lock || true
-  - gem update --system
-  - gem update bundler
-  - gem --version
-  - bundle -v
+- bundle -v
+- rm Gemfile.lock || true
+- gem update --system
+- gem update bundler
+- gem --version
+- bundle -v
 script:
-  - 'bundle exec rake $CHECK'
+- bundle exec rake $CHECK
 matrix:
   fast_finish: true
   include:
   - rvm: 2.1.9
-    bundler_args: --without system_tests development
+    bundler_args: "--without system_tests development"
     env: PUPPET_VERSION="~> 4.0" CHECK=test
   - rvm: 2.4.1
-    bundler_args: --without system_tests development
+    bundler_args: "--without system_tests development"
     env: PUPPET_VERSION="~> 5.0" CHECK=test
   - rvm: 2.4.1
-    bundler_args: --without system_tests development
+    bundler_args: "--without system_tests development"
     env: PUPPET_VERSION="~> 5.0" CHECK=rubocop
   - rvm: 2.4.1
-    bundler_args: --without system_tests development
+    bundler_args: "--without system_tests development"
     env: PUPPET_VERSION="~> 5.0" CHECK=build DEPLOY_TO_FORGE=yes
   - rvm: 2.4.1
-    bundler_args: --without development
+    bundler_args: "--without development"
     dist: trusty
     env: PUPPET_INSTALL_TYPE=agent CHECK=acceptance BEAKER_debug=true BEAKER_set=docker/centos-7
     services: docker
     sudo: required
   - rvm: 2.4.1
-    bundler_args: --without development
+    bundler_args: "--without development"
     dist: trusty
     env: PUPPET_INSTALL_TYPE=agent CHECK=acceptance BEAKER_debug=true BEAKER_set=docker/debian-8
     services: docker
     sudo: required
   - rvm: 2.4.1
-    bundler_args: --without development
+    bundler_args: "--without development"
     dist: trusty
     env: PUPPET_INSTALL_TYPE=agent CHECK=acceptance BEAKER_debug=true BEAKER_set=docker/ubuntu-16.04
     services: docker
@@ -49,7 +48,7 @@ branches:
   only:
   - master
   - qa
-  - /^v\d/
+  - "/^v\\d/"
 notifications:
   email: false
   webhooks: https://mattermost.web.cern.ch/hooks/x6qywtd5wbgyfkx5htn55mtbra
@@ -57,10 +56,8 @@ deploy:
   provider: puppetforge
   user: CERNOps
   password:
-    secure: "FL/yqBvpimbUSdoaFJ+zmxD5pKXhz5vZCSAe+mgl0RFghAJR9MrIXP+xzCNqkqxZdbz61lQJTpztTGhSavhP+NHYDYZTk5KAo3EO14WdW8baw1iRiUXnxtB9OGaAwQ/b67UptaQH78b2nNS0a+seOto6cKsIVMnTRQ5ciUVyJW4EmU27IMFWeDYMvVKt8f6vruVR/Q1I8tqFvR9ILCJf4PVdZFRHeOY6g2iCilVmxHWfSB7TzTr4+/1NlGx6O42LJQF2Oa7097re+V3tgOOJvp2IImOU5gXPiu/Sfwk1USjG5+KTLm75OA+bWu+Z2IB70DnhVkdbfOQNiPm6ZFlLl7Mrjr1miAm128WLMND+hmRFcPJmFv6MyT8oTyXrsiuIE5KAvgAbcSSpkPrM3oOatI+6YpNky5zfgULyvs8u22y7VRIc+X+N7DKTKRTDAUIX/GiMwCuz5PDlYtV1sS4auX3Ug/A2fTpjmMMy8/0uqHH8+59TMC6N1WE/UkOKLtnIVCPNEhL2h1VLfRFadBWw1sUwvvkYW7CHMvSzWw5sf/tgmYaLgQNuq6SG99XTJO4Ur18g8USsYjeJJlooK+I4fUt5/O3Hm5NvdpWsXkgHQD9+/XKBMAiRNBgJrKBhFq6cAT11I7v+L2divYG2DwXKCFBXx2FII7J1WnYtABvBhYo="
+    secure: nGZFUHIifxnbCd5LdOxYFUQHGghGvAIzoaw/mN9W9lVcbrXpZ0z870m/JiuFL0I0p4RiBMRGtibqtheXyndFglJqawoe7Tj+Mri8LgmIGxyGDIgD0kQeUtG925AuLok+9VjPQZOOZ8vk+vmD0zZIGeBlLrqhTR96j9eCzaC6/SkVYu9Gn9dNuUUG1Fa9/ft+xsrTmVlYxS6Fj5xB+PQ2rFPphEpL19kPD6JUfxuBaXTseJ8n8ErpPcr87aM3TZl3z67DMWWo7Ld4WMME/bsSeSNonV3IgLgLDu2jUY/v3nJlBx4CbysgHRapNl/uVKBstpGw72dutfzYGgg5x40IGInwupPoJo+DkwEudTUwFGYPaPmYcjyLrSJc6K+hUbk4FMlfyVm8xtoMMBp2uKuFV2PQErsmz4DVyKeG0PrC4KLyNtwjLByVVBLbuyJviOuEGR5DQF+0PJHIB04mRtl9dyHCN5O8BH8goFrQVVK7QCUd4ipUhWnEDdaZBLONRJpr+ihSiK06V3JnFAI/6Hd/86/Vl0tflA/Z9u38hk22Iy2i7BOKKDF8gLk4gY2j/g07y0d05aWMWVRi7ray0X6q+9MixNrINWdEnOPKgMz5fcyCABJ+j3e51Ha+s7hoL8rqH2q1+Yp76nwD+VxfIhIBPXKwNC+Uj1a2WZPku3RBEog=
   on:
     tags: true
-    # all_branches is required to use tags
     all_branches: true
-    # Only publish the build marked with "DEPLOY_TO_FORGE"
     condition: "$DEPLOY_TO_FORGE = yes"
