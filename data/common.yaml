@@ -1,0 +1,25 @@
+---
+lookup_options:
+  eosserver::environment::environment:
+    merge: hash
+
+eosserver::environment::ensure: 'present'
+eosserver::environment::environment_file: '/etc/sysconfig/eos_env'
+eosserver::environment::environment:
+  dummykey: dummyvalue
+
+eosserver::repo::ensure: 'present'
+eosserver::repo::xroot_repo_url: "http://xrootd.cern.ch/sw/repos/stable/slc/%{::operatingsystemmajrelease}/$basearch/"
+eosserver::repo::xroot_gpgkey: 'http://xrootd.cern.ch/sw/releases/RPM-GPG-KEY.txt'
+eosserver::repo::xroot_dev_repo_url: "http://xrootd.cern.ch/sw/repos/testing/slc/%{::operatingsystemmajrelease}/$basearch/"
+eosserver::repo::xroot_priority: 5
+eosserver::repo::repo_main_url: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/tag/el-%{::operatingsystemmajrelease}/$basearch/"
+eosserver::repo::repo_deps_url: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine-depend/el-%{::operatingsystemmajrelease}/$basearch/"
+eosserver::repo::repo_quark_url: "http://storage-ci.web.cern.ch/storage-ci/quarkdb/tag/el%{::operatingsystemmajrelease}/$basearch/"
+eosserver::repo::repo_dev_url: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/commit/el-%{::operatingsystemmajrelease}/$basearch/"
+eosserver::repo::repo_enable_dev: false
+eosserver::repo::repo_priority: 5
+
+eosserver::ensure: 'present'
+eosserver::quarkdb_ensure: 'absent'
+eosserver::debuginfo_ensure: 'absent'

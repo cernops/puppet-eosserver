@@ -1,10 +1,10 @@
 # Private
 class eosserver::environment (
-  Enum['present', 'absent'] $ensure  = $::eosserver::params::ensure,
-  String $environment_file           = $::eosserver::params::environment_file,
-  Hash $environment                  = $::eosserver::params::environment,
+  Enum['present', 'absent'] $ensure,
+  String $environment_file,
+  Hash $environment,
   Optional[String] $custom_fragment = undef,
-) inherits eosserver::params {
+) {
   if defined($caller_module_name) and $caller_module_name != '' and $caller_module_name != $module_name {
     fail("Use of private class ${name} by ${caller_module_name}")
   }
