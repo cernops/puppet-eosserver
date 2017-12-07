@@ -21,7 +21,15 @@ class eosserver::params {
     '# EMPTY' => 'CONFIGURATION',
   }
   $environment_file  = '/etc/sysconfig/eos_env'
-  $environment       = {
-    '# KEY' => 'VALUE',
-  }
+  $environment       = lookup({
+    'name'          => 'eosserver_environment',
+    'value_type'    => Hash,
+    'default_value' => {
+      '# KEY' => 'VALUE',
+    },
+    'merge'         => {
+      'strategy'        => 'deep',
+      'knockout_prefix' => '--',
+    },
+  })
 }
