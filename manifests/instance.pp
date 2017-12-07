@@ -8,9 +8,6 @@ define eosserver::instance (
   Optional[String] $custom_fragment = undef,
 ) {
 
-  # Can't inherit in a define, so we include params
-  include ::eosserver::params
-
   $_config = pick($config, $eosserver::params::config)
   validate_hash($_config)
 

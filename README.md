@@ -26,7 +26,7 @@ Examples for the following components can be found in the `examples/` folder:
  * Storage node (diskserver)
  * QuarkDB backend
 
-All the standard settings can be set via hiera calls in the params.pp file. See that file for details.
+Default values can be found in `data/common.yaml` and can be changed at will
 
 ### Authors
 CERN EOS operations team - Hervé Rousseau hroussea at cern.ch

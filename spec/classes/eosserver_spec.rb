@@ -17,27 +17,33 @@ describe 'eosserver' do
       describe 'eosserver::repo' do
         it {
           is_expected.to contain_yumrepo('xroot-stable').with(
-            baseurl: "http://xrootd.cern.ch/sw/repos/stable/slc/#{facts[:operatingsystemmajrelease]}/\$basearch/"
+            baseurl: "http://xrootd.cern.ch/sw/repos/stable/slc/#{facts[:operatingsystemmajrelease]}/$basearch/"
           )
         }
         it {
           is_expected.to contain_yumrepo('eos').with(
-            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/tag/el-#{facts[:operatingsystemmajrelease]}/\$basearch/"
+            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/tag/el-#{facts[:operatingsystemmajrelease]}/$basearch/"
           )
         }
         it {
           is_expected.to contain_yumrepo('eos-deps').with(
-            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine-depend/el-#{facts[:operatingsystemmajrelease]}/\$basearch/"
+            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine-depend/el-#{facts[:operatingsystemmajrelease]}/$basearch/"
           )
         }
         it {
           is_expected.to contain_yumrepo('eos-quarkdb').with(
-            baseurl: "http://storage-ci.web.cern.ch/storage-ci/quarkdb/tag/el#{facts[:operatingsystemmajrelease]}/\$basearch/"
+            baseurl: "http://storage-ci.web.cern.ch/storage-ci/quarkdb/tag/el#{facts[:operatingsystemmajrelease]}/$basearch/"
           )
         }
         it {
           is_expected.to contain_yumrepo('eos-dev').with(
-            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/commit/el-#{facts[:operatingsystemmajrelease]}/\$basearch/",
+            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/commit/el-#{facts[:operatingsystemmajrelease]}/$basearch/",
+            enabled: false
+          )
+        }
+        it {
+          is_expected.to contain_yumrepo('xrootd-testing').with(
+            baseurl: "http://xrootd.cern.ch/sw/repos/testing/slc/#{facts[:operatingsystemmajrelease]}/$basearch/",
             enabled: false
           )
         }

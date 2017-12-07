@@ -1,8 +1,8 @@
 class eosserver (
-  Enum['present', 'absent'] $ensure         = $::eosserver::params::ensure,
-  Enum['present', 'absent'] $quarkdb_ensure = $::eosserver::params::quarkdb_ensure,
-  Enum['present', 'absent'] $debuginfo_ensure = $::eosserver::params::debuginfo_ensure,
-) inherits eosserver::params {
+  Enum['present', 'absent'] $ensure,
+  Enum['present', 'absent'] $quarkdb_ensure,
+  Enum['present', 'absent'] $debuginfo_ensure,
+) {
 
   ## Actual work here
   Class['::eosserver::repo'] -> Class['::eosserver::install'] -> Class['::eosserver::environment']
