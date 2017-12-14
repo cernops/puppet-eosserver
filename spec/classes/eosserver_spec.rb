@@ -17,12 +17,14 @@ describe 'eosserver' do
       describe 'eosserver::repo' do
         it {
           is_expected.to contain_yumrepo('xroot-stable').with(
-            baseurl: "http://xrootd.cern.ch/sw/repos/stable/slc/#{facts[:operatingsystemmajrelease]}/$basearch/"
+            baseurl: "http://xrootd.cern.ch/sw/repos/stable/slc/#{facts[:operatingsystemmajrelease]}/$basearch/",
+            gpgcheck: true
           )
         }
         it {
           is_expected.to contain_yumrepo('eos').with(
-            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/tag/el-#{facts[:operatingsystemmajrelease]}/$basearch/"
+            baseurl: "http://storage-ci.web.cern.ch/storage-ci/eos/citrine/tag/el-#{facts[:operatingsystemmajrelease]}/$basearch/",
+            gpgcheck: false
           )
         }
         it {
