@@ -5,8 +5,7 @@ lookup_options:
 
 eosserver::environment::ensure: 'present'
 eosserver::environment::environment_file: '/etc/sysconfig/eos_env'
-eosserver::environment::environment:
-  dummykey: dummyvalue
+eosserver::environment::environment: {}
 
 eosserver::repo::ensure: 'present'
 eosserver::repo::repo_xroot_url: "http://xrootd.cern.ch/sw/repos/stable/slc/%{::operatingsystemmajrelease}/$basearch/"
