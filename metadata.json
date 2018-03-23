@@ -1,6 +1,6 @@
 {
   "name": "CERNOps-eosserver",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "author": "CERNOps",
   "summary": "Installs and configures EOS",
   "license": "Apache-2.0",
