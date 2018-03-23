@@ -17,7 +17,14 @@ class eosserver::install (
   package{ ['quarkdb']:
     ensure => $quarkdb_ensure,
   }
-  package{ ['xrootd-debuginfo', 'eos-debuginfo', 'quarkdb-debuginfo']:
+  package{ ['xrootd-debuginfo', 'eos-debuginfo']:
     ensure => $debuginfo_ensure,
+  }
+  package{ ['quarkdb-debuginfo']:
+    ensure =>  bool2str(
+      ($quarkdb_ensure == 'present' and $debuginfo_ensure == 'present'),
+      'present',
+      'absent'
+    ),
   }
 }
