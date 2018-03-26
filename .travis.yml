@@ -58,6 +58,7 @@ matrix:
 branches:
   only:
   - master
+  - qa
   - /^v\d/
 notifications:
   email: false
