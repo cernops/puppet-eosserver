@@ -17,12 +17,10 @@ describe 'eosserver::service' do
         }
       end
 
-      context 'ensure testinst is running' do
+      context 'with defaults ensure testinst is running' do
+        it { expect(subject).to compile.with_all_deps }
         it {
-          is_expected.to compile.with_all_deps
-        }
-        it {
-          is_expected.to contain_service('testinst').with(
+          expect(subject).to contain_service('testinst').with(
             ensure: 'running',
             enable: true
           )

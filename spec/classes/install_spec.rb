@@ -11,7 +11,7 @@ describe 'eosserver::install' do
 
       let(:title) { 'test' }
 
-      context 'test instance with ensure=absent' do
+      context 'with ensure=absent test instance' do
         let(:params) do
           {
             package_ensure: 'absent'
@@ -22,7 +22,7 @@ describe 'eosserver::install' do
         it { is_expected.to contain_package('xrootd').with_ensure_absent }
       end
 
-      context 'test instance with defaults' do
+      context 'with defaults: test instance' do
         let(:params) do
           {
             package_ensure: 'present'
