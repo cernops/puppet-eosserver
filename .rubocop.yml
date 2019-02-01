@@ -14,7 +14,7 @@ AllCops:
     - Guardfile
     - Vagrantfile
     - spec/spec_helper.rb
-Layout/ConditionPosition:
+Lint/ConditionPosition:
   Enabled: True
 
 Lint/ElseLayout:
@@ -47,12 +47,6 @@ Style/RedundantReturn:
 Layout/EndOfLine:
   Enabled: False
 
-Lint/AmbiguousOperator:
-  Enabled: True
-
-Lint/AssignmentInCondition:
-  Enabled: True
-
 Layout/SpaceBeforeComment:
   Enabled: True
 
@@ -76,19 +70,22 @@ Metrics/ModuleLength:
 Style/WhileUntilModifier:
   Enabled: True
 
+Lint/AmbiguousOperator:
+  Enabled: True
+
+Lint/AssignmentInCondition:
+  Enabled: True
+
 Lint/AmbiguousRegexpLiteral:
   Enabled: True
 
-Security/Eval:
+Lint/BlockAlignment:
   Enabled: True
 
-Layout/BlockAlignment:
+Lint/DefEndAlignment:
   Enabled: True
 
-Layout/DefEndAlignment:
-  Enabled: True
-
-Layout/EndAlignment:
+Lint/EndAlignment:
   Enabled: True
 
 Lint/DeprecatedClassMethods:
@@ -104,6 +101,9 @@ Lint/RescueException:
   Enabled: True
 
 Lint/StringConversionInInterpolation:
+  Enabled: True
+
+Lint/UnderscorePrefixedVariableName:
   Enabled: True
 
 Lint/UnusedBlockArgument:
@@ -124,12 +124,6 @@ Lint/Void:
 Layout/AccessModifierIndentation:
   Enabled: True
 
-Naming/AccessorMethodName:
-  Enabled: True
-
-Style/Alias:
-  Enabled: True
-
 Layout/AlignArray:
   Enabled: True
 
@@ -140,6 +134,15 @@ Layout/AlignParameters:
   Enabled: True
 
 Metrics/BlockNesting:
+  Enabled: True
+
+Security/Eval:
+  Enabled: True
+
+Style/AccessorMethodName:
+  Enabled: True
+
+Style/Alias:
   Enabled: True
 
 Style/AsciiComments:
@@ -160,7 +163,7 @@ Layout/CaseIndentation:
 Style/CharacterLiteral:
   Enabled: True
 
-Naming/ClassAndModuleCamelCase:
+Style/ClassAndModuleCamelCase:
   Enabled: True
 
 Style/ClassAndModuleChildren:
@@ -255,7 +258,7 @@ Style/CommentAnnotation:
 Metrics/CyclomaticComplexity:
   Enabled: False
 
-Naming/ConstantName:
+Style/ConstantName:
   Enabled: True
 
 Style/Documentation:
@@ -367,7 +370,7 @@ Style/UnlessElse:
 Style/VariableInterpolation:
   Enabled: True
 
-Naming/VariableName:
+Style/VariableName:
   Enabled: True
 
 Style/WhileUntilDo:
@@ -376,7 +379,7 @@ Style/WhileUntilDo:
 Style/EvenOdd:
   Enabled: True
 
-Naming/FileName:
+Style/FileName:
   Enabled: True
 
 Style/For:
@@ -385,7 +388,7 @@ Style/For:
 Style/Lambda:
   Enabled: True
 
-Naming/MethodName:
+Style/MethodName:
   Enabled: True
 
 Style/MultilineTernaryOperator:
@@ -433,7 +436,7 @@ Style/PercentLiteralDelimiters:
 Style/PerlBackrefs:
   Enabled: True
 
-Naming/PredicateName:
+Style/PredicateName:
   Enabled: True
 
 Style/RedundantException:
@@ -457,9 +460,6 @@ Style/RescueModifier:
 # based on https://github.com/voxpupuli/modulesync_config/issues/168
 Style/RegexpLiteral:
   EnforcedStyle: percent_r
-  Enabled: True
-
-Lint/UnderscorePrefixedVariableName:
   Enabled: True
 
 Metrics/ParameterLists:
