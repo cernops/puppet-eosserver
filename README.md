@@ -1,7 +1,7 @@
 # EOS Server module for Puppet
 
 [![Build Status](https://travis-ci.org/cernops/puppet-eosserver.png?branch=master)](https://travis-ci.org/cernops/puppet-eosserver)
-[![Coverage Status](https://coveralls.io/repos/github/cernops/puppet-eosserver/badge.svg?branch=master)](https://coveralls.io/github/cernops/puppet-eosserver?branch=master)
+[![Coverage Status](https://coveralls.io/repos/github/cernops/puppet-eosserver/badge.svg?branch=qa)](https://coveralls.io/github/cernops/puppet-eosserver?branch=qa)
 
 ## Description
 
