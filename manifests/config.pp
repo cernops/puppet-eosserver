@@ -5,9 +5,6 @@ define eosserver::config(
   Enum['present', 'absent'] $package_ensure,
   Optional[String] $custom_fragment = undef,
 ) {
-  if defined($caller_module_name) and $caller_module_name != '' and $caller_module_name != $module_name {
-    fail("Use of private class ${name} by ${caller_module_name}")
-  }
 
   if $package_ensure == 'absent' {
     file { $config_file: ensure => absent }
