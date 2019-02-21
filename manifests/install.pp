@@ -4,10 +4,6 @@ class eosserver::install (
   Enum['present', 'absent'] $debuginfo_ensure = 'absent',
 ){
 
-  if defined($caller_module_name) and $caller_module_name != '' and $caller_module_name != $module_name {
-    fail("Use of private class ${name} by ${caller_module_name}")
-  }
-
   package{ ['xrootd', 'xrootd-libs', 'xrootd-client']:
     ensure => $package_ensure,
   }

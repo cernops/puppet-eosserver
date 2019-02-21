@@ -4,10 +4,6 @@ define eosserver::service(
   Boolean $service_manage,
 ) {
 
-  if defined($caller_module_name) and $caller_module_name != '' and $caller_module_name != $module_name {
-    fail("Use of private class ${name} by ${caller_module_name}")
-  }
-
   $_service_enable = $service_ensure ? {
     'running' => true,
     'stopped' => false,
